@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "JSON Script Tag",
+	"scopeName": "source.dbms.embedded",
+	"injectionSelector": [
+		"L:text.xml"
+	],
+	"patterns": [
+		{
+			"include": "#tsql-tag"
+		}
+	],
+	"repository": {
+		"tsql-tag": {
+			"contentName": "meta.embedded.block.sql",
+			"begin": "(<)(tsql)(>)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.xml"
+				},
+				"2": {
+					"name": "entity.name.tag.localname.xml"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.xml"
+				}
+			},
+			"end": "(</)(tsql)(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.xml"
+				},
+				"2": {
+					"name": "entity.name.tag.localname.xml"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.xml"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.sql"
+				}
+			]
+		}
+	}
+}

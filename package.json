@@ -1,0 +1,38 @@
+{
+    "name": "dbms",
+    "displayName": "DBMS",
+    "description": "DBMS Syntax highlighting support for DBMS patches.",
+    "author": "Wolfgang Puchinger <wpuchinger@rocom-service.de>",
+    "publisher": "rocomservice",
+    "icon": "images/logo.png",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Other"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rocom-service/vscode-dbms.git"
+    },
+    "contributes": {
+        "grammars": [
+            {
+                "scopeName": "source.dbms.embedded",
+                "path": "./syntax/dbms.embedded.json",
+                "injectTo": [
+                    "text.xml"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.block.sql": "sql"
+                }
+            }
+        ]
+    },
+    "extensionDependencies": [
+        "redhat.vscode-xml",
+        "ms-mssql.mssql"
+    ]
+}
