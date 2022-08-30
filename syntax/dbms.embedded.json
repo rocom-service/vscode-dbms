@@ -7,10 +7,80 @@
 	],
 	"patterns": [
 		{
-			"include": "#tsql-tag"
+			"include": "#tsql-parent-tag"
 		}
 	],
 	"repository": {
+
+		"tsql-parent-tag" : {
+			"begin": "(<)(view|strategy)(?:\\s+(name)=('[^']+'|\"[^\"]+\")\\s*)?(>)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.xml"
+				},
+				"2": {
+					"name": "entity.name.tag.localname.xml"
+				},
+				"3": {
+					"name": "entity.other.attribute-name.localname.xml"
+				},
+				"4": {
+					"name": "string.quoted.single.xml"
+				},
+				"5": {
+					"name": "punctuation.definition.tag.xml"
+				}
+			},
+			"end": "(</)(view|strategy)(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.xml"
+				},
+				"2": {
+					"name": "entity.name.tag.localname.xml"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.xml"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#tsql-tag"
+				}, 
+				{
+					"include": "#description-tag"
+				}
+			]
+		},
+
+			
+		"description-tag": {
+			"begin": "(<)(description)(>)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.xml"
+				},
+				"2": {
+					"name": "entity.name.tag.localname.xml"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.xml"
+				}
+			},
+			"end": "(</)(description)(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.xml"
+				},
+				"2": {
+					"name": "entity.name.tag.localname.xml"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.xml"
+				}
+			}
+		},
+
 		"tsql-tag": {
 			"contentName": "meta.embedded.block.sql",
 			"begin": "(<)(tsql)(>)",

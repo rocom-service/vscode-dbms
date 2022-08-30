@@ -1,38 +1,83 @@
 {
-    "name": "dbms",
-    "displayName": "DBMS",
-    "description": "DBMS Syntax highlighting support for DBMS patches.",
-    "author": "Wolfgang Puchinger <wpuchinger@rocom-service.de>",
-    "publisher": "rocomservice",
-    "icon": "images/logo.png",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.30.0"
-    },
-    "categories": [
-        "Programming Languages",
-        "Other"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/rocom-service/vscode-dbms.git"
-    },
-    "contributes": {
-        "grammars": [
-            {
-                "scopeName": "source.dbms.embedded",
-                "path": "./syntax/dbms.embedded.json",
-                "injectTo": [
-                    "text.xml"
-                ],
-                "embeddedLanguages": {
-                    "meta.embedded.block.sql": "sql"
-                }
-            }
-        ]
-    },
-    "extensionDependencies": [
-        "redhat.vscode-xml",
-        "ms-mssql.mssql"
-    ]
+	"name": "dbms",
+	"displayName": "DBMS",
+	"description": "DBMS Syntax highlighting support for DBMS patches.",
+	"author": "Wolfgang Puchinger <wpuchinger@rocom-service.de>",
+	"publisher": "rocomservice",
+	"icon": "images/logo.png",
+	"version": "0.0.2",
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rocom-service/vscode-dbms.git"
+	},
+	"contributes": {
+		"grammars": [
+			{
+				"scopeName": "source.dbms.embedded",
+				"path": "./syntax/dbms.embedded.json",
+				"injectTo": [
+					"text.xml"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.sql": "sql"
+				}
+			}
+		],
+		"configurationDefaults": {
+			"editor.tokenColorCustomizations": {
+				"textMateRules": [
+					{
+						"scope": [
+							"text.xml keyword.other.DML.sql",
+							"text.xml keyword.other.DDL.create.II.sql",
+							"text.xml keyword.other.sql",
+							"text.xml keyword.other.alias.sql"
+						],
+						"settings": {
+							"foreground": "#F92672"
+						}
+					},
+					{
+						"scope": "text.xml support.function.system.sql",
+						"settings": {
+							"foreground": "#66D9EF",
+							"fontStyle": ""
+						}
+					},
+					{
+						"scope": "text.xml constant.numeric.sql",
+						"settings": {
+							"foreground": "#AE81FF"
+						}
+					},
+					{
+						"scope": [
+							"text.xml string.quoted.single.sql",
+							"text.xml string.quoted.double.sql"
+						],
+						"settings": {
+							"foreground": "#E6DB74"
+						}
+					}
+				]
+			}
+		}
+	},
+	"extensionDependencies": [
+		"redhat.vscode-xml",
+		"ms-mssql.mssql"
+	],
+	"__metadata": {
+		"id": "2b161826-d24f-448f-aad7-6b408bee571f",
+		"publisherDisplayName": "rocom service GmbH",
+		"publisherId": "d1da4885-67a9-4c0a-a8f0-78e0d020aa52",
+		"isPreReleaseVersion": false
+	}
 }
