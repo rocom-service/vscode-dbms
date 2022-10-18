@@ -4,4 +4,5 @@
 vsc-extension-quickstart.md
 
 images/*.xcf
+images/*.ps1
 make.ps1

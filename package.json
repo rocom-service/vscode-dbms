@@ -5,7 +5,7 @@
 	"author": "Wolfgang Puchinger <wpuchinger@rocom-service.de>",
 	"publisher": "rocomservice",
 	"icon": "images/logo.png",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.30.0"
 	},
@@ -36,6 +36,7 @@
 					{
 						"scope": [
 							"text.xml keyword.other.DML.sql",
+							"text.xml keyword.other.LUW.sql",
 							"text.xml keyword.other.DDL.create.II.sql",
 							"text.xml keyword.other.sql",
 							"text.xml keyword.other.alias.sql"
